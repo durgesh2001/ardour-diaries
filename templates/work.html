@@ -1,0 +1,73 @@
+
+{% extends 'main.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="tm-main-section light-gray-bg">
+      <div class="container" id="main">
+        <section class="tm-section tm-section-margin-bottom-0 row">
+          <div class="col-lg-12 tm-section-header-container">
+            <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="{% static 'img/logo.png' %}" alt="Logo" class="tm-site-logo"> My Write-ups</h2>
+            <div class="tm-hr-container"><hr class="tm-hr"></div>
+          </div>
+          <div class="col-lg-12 tm-popular-items-container">
+            <div class="tm-popular-item">
+              <img src="{% static 'img/poetry.jpg' %}" alt="Poems" class="tm-popular-item-img">
+              <div class="tm-popular-item-description">
+                <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">P</span>oetries</h3><hr class="tm-popular-item-hr">
+                <p>Read all type of poems written by me.</p>
+                <div class="order-now-container">
+                  <a href="{% url 'poetries' %}" class="order-now-link tm-handwriting-font">Read Now</a>
+                </div>
+              </div>              
+            </div>
+            <div class="tm-popular-item">
+              <img src="{% static 'img/shayri.jpg' %}" alt="Popular" class="tm-popular-item-img">
+              <div class="tm-popular-item-description">
+                <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">S</span>hayries</h3><hr class="tm-popular-item-hr">
+                <p>Read all type of shayries written by me.</p>
+                <div class="order-now-container">
+                  <a href="{% url 'shayries' %}" class="order-now-link tm-handwriting-font">Read Now</a>
+                </div>
+              </div>              
+            </div>
+            <div class="tm-popular-item">
+              <img src="{% static 'img/oneliner.jpg' %}" alt="Popular" class="tm-popular-item-img">
+              <div class="tm-popular-item-description">
+                <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">O</span>ne-Liner</h3><hr class="tm-popular-item-hr">
+                <p>Read all type of one liners written by me.</p>
+                <div class="order-now-container">
+                  <a href="{% url 'oneliner' %}" class="order-now-link tm-handwriting-font">Read Now</a>
+                </div>
+              </div>              
+            </div>
+          </div>       
+        </section>
+        <section class="tm-section">
+          <div class="row">
+            <div class="col-lg-12 tm-section-header-container">
+              <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="{% static 'img/logo.png' %}" alt="Logo" class="tm-site-logo"> Day Special</h2> 
+              <div class="tm-hr-container"><hr class="tm-hr"></div> 
+            </div>  
+          </div>          
+          <div class="row">
+            <div class="tm-daily-menu-container margin-top-60">
+              <div class="col-lg-4 col-md-4">
+                <img src="{% static 'img/menu-board.png' %}" alt="Menu board" class="tm-daily-menu-img">      
+              </div>            
+              <div class="col-lg-8 col-md-8">
+                <p>इस भौतिक संसार में कोई भी विश्वशनीय नहीं,<br>
+                  पलभर में लोग साथ छोड़ देते है!<br>
+                  अपने अलावा किसी का साथ प्रगाढ़ नही,<br>
+                  आशय हमेशा स्वावलंबी की ओर अग्रसर रहे।</p>
+                    
+              </div>
+            </div>
+          </div>          
+        </section>
+      </div>
+    </div> 
+    
+
+    {% endblock %} 

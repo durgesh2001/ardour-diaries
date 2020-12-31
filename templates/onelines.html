@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% block content %}
+{% load static %}    
+    
+    
+      <div class="container" id="main">
+        
+        <section class="tm-section row">
+          <div class="col-lg-12 tm-section-header-container margin-bottom-30">
+            <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="{% static 'img/logo.png' %}" alt="Logo" class="tm-site-logo"> One-Liners</h2>
+               <div class="tm-hr-container"><hr class="tm-hr"></div>
+          </div>
+                    
+          <div class="tm-menu-product-content col-lg-9 col-md-9"> <!-- menu content -->
+            <div class="tm-product">
+              <div class="tm-product-text">
+                <h3 class="tm-product-title ">{{oneline1.title}}</h3>
+                  <div class="tm-hr-container"><hr class="tm-hr"></div>
+                    <p class="tm-product-description">{{oneline1.content|linebreaks}}</p>
+
+                    <br><br>
+                      <img src="{{oneline1.oneliners_image.url}}" alt="Product" height="500px" width="500px">
+                      <div class="tm-hr-container"><hr class="tm-hr"></div>
+                      <a href={{oneline1.insta_link}} target=_blank class="tm-product-description"><i class="fa fa-instagram"></i>Check our instagram post</a><br>
+                      <a href={{oneline1.fb_link}} target=_blank class="tm-product-description"><i class="fa fa-instagram"></i>Check our facebook post</a>
+                  </div>
+              </div>             
+            </div>
+          </div>          
+        </section>
+      </div>
+     
+   
+
+    {% endblock %} 

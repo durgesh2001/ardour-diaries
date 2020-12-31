@@ -1,0 +1,50 @@
+{% extends 'main.html' %}
+{% block content %}
+{% load static %}    
+    
+    <div class="tm-main-section light-gray-bg">
+      <div class="container" id="main">
+        
+        <section class="tm-section row">
+          <div class="col-lg-12 tm-section-header-container margin-bottom-30">
+            <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="{% static 'img/logo.png' %}" alt="Logo" class="tm-site-logo"> Shayries</h2>
+            <div class="tm-hr-container"><hr class="tm-hr"></div>
+          </div>
+          <div>
+            <div class="col-lg-3 col-md-3">
+              <div class="tm-position-relative margin-bottom-30">              
+                <nav class="tm-side-menu">
+                  <ul>
+                    <li><a href="/shayries/shayrees/1">मुज़रिम</a></li>
+                    <li><a href="/shayries/shayrees/1"> तिरंगा</a></li>
+                    <li><a href="/shayries/shayrees/1">परख</a></li>
+                    <li><a href="/shayries/shayrees/1"> सियासी जंग </a></li>
+                    <li><a href="/shayries/shayrees/1">बाज़ार-ए-इश्क़</a></li>
+                    <li><a href="/shayries/shayrees/1">दोष</a></li>
+                    
+                  </ul>              
+                </nav>    
+                <img src="{% static 'img/vertical-menu-bg.png' %}" alt="Menu bg" class="tm-side-menu-bg">
+              </div>  
+            </div>            
+            <div class="tm-menu-product-content col-lg-9 col-md-9"> <!-- menu content -->
+              {% for i in shayry %}
+              <div class="tm-product">
+                <img src="{% static 'img/logo1.jpeg' %}" alt="shayries">
+                <div class="tm-product-text">
+                  <h3 class="tm-product-title">{{i.title}}</h3>
+                  <p class="tm-product-description">{{i.desc}}</p>
+                </div>
+                <div class="tm-product-price">
+                  <a href="/shayries/shayrees/{{i.id}}" class="tm-product-price-link tm-handwriting-font">Read</a>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>          
+        </section>
+      </div>
+    </div> 
+   
+
+    {% endblock %} 
