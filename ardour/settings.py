@@ -25,7 +25,7 @@ SECRET_KEY = 'qa_fim(cd0*(d+hpi7hxb+$u8a15xse1ls&2k^k=4_941un_kb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://ardourdiaries.herokuapp.com/','127.0.0.1:8000']
+ALLOWED_HOSTS = ['ardourdiaries.herokuapp.com','127.0.0.1:8000']
 
 
 # Application definition
