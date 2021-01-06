@@ -1,1 +1,1 @@
-web: gunicorn ardour.wsgi
+web: gunicorn ardour.wsgi --log-file -
