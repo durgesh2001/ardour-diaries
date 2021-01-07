@@ -83,7 +83,13 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
 
 
 # Password validation
@@ -131,3 +137,6 @@ STATICFILES_DIRS=[
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
