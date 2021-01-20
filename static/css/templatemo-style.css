@@ -272,7 +272,7 @@ ul {
 .tm-table-set {
   opacity: 0.5;
   position: absolute;
-  bottom: 0px;
+  bottom: -100px;
   left: 0;
   
 }
