@@ -133,7 +133,7 @@ STATICFILES_DIRS=[
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-django_heroku.settings(locals())
+
 
 
 #S3 BUCKETS CONFIG
@@ -141,8 +141,12 @@ django_heroku.settings(locals())
 AWS_ACCESS_KEY_ID = "AKIAYXT7P5A7MZR63CPZ"
 AWS_SECRET_ACCESS_KEY = "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"
 AWS_STORAGE_BUCKET_NAME = "ardourdiaries"
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
+django_heroku.settings(locals())
