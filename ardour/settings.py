@@ -22,11 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'qa_fim(cd0*(d+hpi7hxb+$u8a15xse1ls&2k^k=4_941un_kb'
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'qa_fim(cd0*(d+hpi7hxb+$u8a15xse1ls&2k^k=4_941un_kb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['ardourdiaries.herokuapp.com','127.0.0.1:8000']
 
@@ -132,20 +131,16 @@ STATICFILES_DIRS=[
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-
+django_heroku.settings(locals())
 
 
 #S3 BUCKETS CONFIG
 
-AWS_ACCESS_KEY_ID="AKIAYXT7P5A7MZR63CPZ"
-AWS_SECRET_ACCESS_KEY="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"
-AWS_STORAGE_BUCKET_NAME="ardourdiaries"
-SECRET_KEY="fae469793186d0d8fbbae016ae33c5a646b8392d499f2eeb"
-DEBUG_VALUE="True"
-#AWS_S3_FILE_OVERWRITE = False
-#AWS_DEFAULT_ACL = None
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-django_heroku.settings(locals())
+AWS_ACCESS_KEY_ID = "AKIAYXT7P5A7MZR63CPZ"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "ardourdiaries"
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
