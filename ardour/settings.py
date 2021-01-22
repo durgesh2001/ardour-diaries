@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
 
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,9 +25,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'qa_fim(cd0*(d+hpi7hxb+$u8a15xse1ls&2k^k=4_941un_kb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['ardourdiaries.herokuapp.com','127.0.0.1:8000', '127.0.0.1']
+ALLOWED_HOSTS = ['*', 'ardourdiaries.herokuapp.com',
+                 '127.0.0.1:8000', '127.0.0.1']
 
 
 # Application definition
@@ -61,7 +62,7 @@ ROOT_URLCONF = 'ardour.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,25 +128,24 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/images/'
+MEDIA_URL = '/media/'
 
-STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
 ]
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
+# S3 BUCKETS CONFIG
+if not DEBUG:
+    AWS_ACCESS_KEY_ID = "AKIAYXT7P5A7MZR63CPZ"
+    AWS_SECRET_ACCESS_KEY = "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"
+    AWS_STORAGE_BUCKET_NAME = "ardourdiaries"
 
-#S3 BUCKETS CONFIG
-
-#AWS_ACCESS_KEY_ID = "AKIAYXT7P5A7MZR63CPZ"
-#AWS_SECRET_ACCESS_KEY = "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"
-#AWS_STORAGE_BUCKET_NAME = "ardourdiaries"
-
-#AWS_S3_FILE_OVERWRITE = False
-#AWS_DEFAULT_ACL = None
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
+    AWS_S3_FILE_OVERWRITE = False
+    AWS_DEFAULT_ACL = None
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
